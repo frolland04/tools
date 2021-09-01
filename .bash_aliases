@@ -11,6 +11,7 @@ alias dv='sudo docker volume ls'
 
 alias glo='git log -20 --oneline'
 alias gs='git status'
+alias gc='git config --list'
 
 alias upd='sudo apt-get update && sudo apt-get upgrade'
 
