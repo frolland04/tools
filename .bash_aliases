@@ -17,8 +17,8 @@ alias gcf='git config --global user.name "Frédéric ROLLAND" && git config --gl
 
 alias upd='sudo apt-get update && sudo apt-get upgrade'
 
-export GIT_IMX6='$HOME/git/PSA/embedded-linux/system/embedded/Toradex_Apalis_iMX6'
 export GIT_GHB='/mnt/d/frolland/git/ghb'
 export GIT_GLB='/mnt/d/frolland/git/glb'
+export IMX6_B2QT='/home/test/git/PSA/embedded-linux/system/embedded/Toradex_Apalis_iMX6'
 
 export DISPLAY=192.168.0.24:0
