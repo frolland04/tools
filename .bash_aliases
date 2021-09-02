@@ -12,8 +12,8 @@ alias dv='sudo docker volume ls'
 alias glo='git log -20 --oneline'
 alias gs='git status'
 alias gc='git config --list'
-alias gcp='git config --global user.name "Frédéric ROLLAND" && git config --global user.email "frederic.rolland@pellenc.com"'
-alias gcf='git config --global user.name "Frédéric ROLLAND" && git config --global user.email "frederic.rolland@free.fr"'
+alias gcp='git config user.name "Frédéric ROLLAND" && git config user.email "frederic.rolland@pellenc.com"'
+alias gcf='git config user.name "Frédéric ROLLAND" && git config user.email "frederic.rolland@free.fr"'
 
 alias upd='sudo apt-get update && sudo apt-get upgrade'
 
