@@ -16,7 +16,7 @@ alias gcp='git config user.name "Frédéric ROLLAND" && git config user.email "f
 alias gcf='git config user.name "Frédéric ROLLAND" && git config user.email "frederic.rolland@free.fr"'
 
 alias upd='sudo apt-get update && sudo apt-get upgrade'
-alias upd='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias updd='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
 export GIT_GHB='/mnt/d/frolland/git/ghb'
 export GIT_GLB='/mnt/d/frolland/git/glb'
