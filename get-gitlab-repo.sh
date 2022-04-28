@@ -7,7 +7,7 @@ function usage() {
 
 # **** Lister les ID des sous-groupes d'un groupe (donné par son ID) : ****
 function get_subgroups_id() {
-    echo "$(curl -s --header "PRIVATE-TOKEN: $PRIVATE_TOKEN_API" "https://gitlab.com/api/v4/groups/$1/subgroups" | jq -r ".[].id")"
+    echo "$(curl -s --header "PRIVATE-TOKEN: $PRIVATE_TOKEN_API" "https://gitlab.com/api/v4/groups/$1/subgroups?per_page=100" | jq -r ".[].id")"
 }
 
 # **** Récupérer le nom d'un groupe (donné par son ID) : ****
@@ -17,7 +17,7 @@ function get_groupname() {
 
 # **** Récupérer les URLs des dépots d'un groupe (donné par son ID) : ****
 function get_repo_https() {
-    echo "$(curl -s --header "PRIVATE-TOKEN: $PRIVATE_TOKEN_API" "https://gitlab.com/api/v4/groups/$1" | jq -r ".projects[].http_url_to_repo")"
+    echo "$(curl -s --header "PRIVATE-TOKEN: $PRIVATE_TOKEN_API" "https://gitlab.com/api/v4/groups/$1?per_page=100" | jq -r ".projects[].http_url_to_repo")"
 }
 
 # **** Descends dans l'arbre des groupes et affiche les éléments rencontrés : ***
@@ -25,7 +25,7 @@ function process_group() {
     echo "$1"
     local sg=$(get_subgroups_id $1)
     local g=""
-    
+
     for g in $sg
     do echo $(process_group $g)
     done
