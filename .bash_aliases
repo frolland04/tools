@@ -18,8 +18,13 @@ alias gcf='git config user.name "Frédéric ROLLAND" && git config user.email "f
 alias upd='sudo apt-get update && sudo apt-get upgrade'
 alias updd='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
-export GIT_GHB='/mnt/d/frolland/git/ghb'
-export GIT_GLB='/mnt/d/frolland/git/glb'
-export IMX6_B2QT='/home/test/git/PSA/embedded-linux/system/embedded/Toradex_Apalis_iMX6'
+export GIT_ROOT='/home/test/git'
+export GIT_FRD=$GIT_ROOT'/FRD'
+export GIT_PSA=$GIT_ROOT'/PSA'
 
-export DISPLAY=192.168.0.24:0
+export GIT_GHB=$GIT_FRD'/ghb'
+export GIT_GLB=$GIT_FRD'/glb'
+export IMX6_B2QT=$GIT_PSA'/labo/sources/system/embedded/Toradex_Apalis_iMX6'
+
+export DISPLAY=:0
+
