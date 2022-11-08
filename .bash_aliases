@@ -12,19 +12,18 @@ alias dv='sudo docker volume ls'
 alias glo='git log -20 --oneline'
 alias gs='git status'
 alias gc='git config --list'
-alias gcp='git config user.name "Frédéric ROLLAND" && git config user.email "frederic.rolland@pellenc.com"'
+alias gce='git config user.name "Frédéric ROLLAND" && git config user.email "frederic.rolland@smile.fr"'
 alias gcf='git config user.name "Frédéric ROLLAND" && git config user.email "frederic.rolland@free.fr"'
 
 alias upd='sudo apt-get update && sudo apt-get upgrade'
 alias updd='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
-export GIT_ROOT='/home/test/git'
-export GIT_FRD=$GIT_ROOT'/FRD'
-export GIT_PSA=$GIT_ROOT'/PSA'
+export GIT_ROOT=/home/$USER/git
+export GIT_FRD=$GIT_ROOT/FRD
+export GIT_ECS=$GIT_ROOT/ECS
 
-export GIT_GHB=$GIT_FRD'/ghb'
-export GIT_GLB=$GIT_FRD'/glb'
-export IMX6_B2QT=$GIT_PSA'/labo/sources/system/embedded/Toradex_Apalis_iMX6'
+export GIT_GHB=$GIT_FRD/ghb
+export GIT_GLB=$GIT_FRD/glb
 
 export DISPLAY=:0
 
