@@ -1,43 +1,43 @@
 # System-wide APT package update
-sudo apt-get update
-sudo apt-get full-upgrade
+sudo apt update
+sudo apt full-upgrade
 
 # Specific packages for virtualized platforms
-sudo apt-get install open-vm-tools open-vm-tools-desktop
+sudo apt install open-vm-tools open-vm-tools-desktop
 
 # C/C++ base packages
-sudo apt-get install build-essential gdb cmake clazy cppcheck csstidy tidy weblint-perl valgrind kcachegrind htop linux-tools-common
+sudo apt install build-essential gdb cmake ninja-build clazy cppcheck valgrind kcachegrind htop linux-tools-common 
+
+# Qt tooling
+sudo apt install qtcreator gammaray gammaray-plugin-positioning gammaray-plugin-bluetooth gammaray-plugin-quickinspector gammaray-plugin-waylandinspector clazy
+
+# Web tooling
+sudo apt csstidy tidy weblint-perl
 
 # CLI tooling
-sudo apt-get install sysvbanner cowsay terminator terminology cool-retro-term konsole
-sudo apt-get install tree pv dialog wget curl jq p7zip-full unzip cpio xz-utils rsync nano
+sudo apt install sysvbanner cowsay terminator terminology cool-retro-term konsole kitty fzf tree pv dialog wget curl jq p7zip-full unzip cpio xz-utils rsync nano vim sudo
 
 # System and networking tools
-sudo apt-get install snapd apt-utils diffstat chrpath socat locales debianutils findutils file time fontconfig strace lsof iputils-ping net-tools traceroute iperf
+sudo apt install apt-utils diffstat chrpath socat locales debianutils findutils file time strace ltrace lsof iputils-ping net-tools traceroute iperf smbclient libssl-dev 
 
 # Docker base packages
-sudo apt-get install docker docker-compose
+sudo apt install docker docker-compose
 
 # GIT tooling
-sudo apt-get install git git-lfs gitk git-gui git-cola qgit
+sudo apt install git git-lfs gitk git-gui git-cola
 
 # Various productivity tools
-sudo apt-get install gparted inkscape gimp krita digikam gthumb thunar
+sudo apt install gparted inkscape gimp krita digikam darktable gthumb shotwell gwenview thunar dia libreoffice
 
 # IDE and editors
-sudo apt-get install kdevelop qtcreator meld kate gedit
+sudo apt install kdevelop qtcreator meld kate gedit
 
 # Python base packages
-sudo apt-get install python3 python3-pip python3-venv python3-bs4 python3-serial python3-mysql.connector python3-mysqldb
+sudo apt install python3 python3-venv
 
-# Specific libs and runtimes
-sudo apt-get install pyqt5-dev nodejs npm sqlite3 rrdtool
+# Interesting libs and runtimes
+sudo apt install sqlite3 libsqlite3-dev rrdtool librrd-dev
 
-# Specific Python packages reclaimed using PIP
-sudo -H python3 -m pip install pip --upgrade
-sudo -H python3 -m pip install setuptools --upgrade
-
-# Specific packages reclaimed using SNAP
-sudo snap install gitkraken
-sudo snap install code
-sudo snap install pycharm-community
+# Interesting Python packages to install in virtual env
+python3 -m pip install pip --upgrade
+pip3 install setuptools black pylint mypy pywal bs4 serial mysql.connector --upgrade
