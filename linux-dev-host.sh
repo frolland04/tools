@@ -12,13 +12,19 @@ sudo apt install build-essential gdb cmake ninja-build clazy cppcheck valgrind k
 sudo apt install qtcreator gammaray gammaray-plugin-positioning gammaray-plugin-bluetooth gammaray-plugin-quickinspector gammaray-plugin-waylandinspector clazy
 
 # Web tooling
-sudo apt csstidy tidy weblint-perl
+sudo apt install csstidy tidy weblint-perl
 
 # CLI tooling
-sudo apt install sysvbanner cowsay terminator terminology cool-retro-term konsole kitty fzf tree pv dialog wget curl jq p7zip-full unzip cpio xz-utils rsync nano vim sudo
+sudo apt install sysvbanner cowsay kitty fzf tree pv dialog wget curl jq p7zip-full unzip cpio xz-utils rsync nano vim sudo fontconfig msmtp
 
 # System and networking tools
-sudo apt install apt-utils diffstat chrpath socat locales debianutils findutils file time strace ltrace lsof iputils-ping net-tools traceroute iperf smbclient libssl-dev 
+sudo apt install apt-utils diffstat chrpath socat locales debianutils findutils file time strace ltrace lsof iputils-ping net-tools traceroute iperf smbclient libssl-dev
+
+# Filesystem tooling
+sudo apt install exfat-fuse exfat-utils
+
+# System tools GUI
+sudo apt install terminator terminology cool-retro-term konsole systemd-bootchart bustle d-feet
 
 # Docker base packages
 sudo apt install docker docker-compose
