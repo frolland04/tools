@@ -18,7 +18,7 @@ sudo apt install csstidy tidy weblint-perl
 sudo apt install sysvbanner cowsay kitty fzf tree pv dialog wget curl jq p7zip-full unzip cpio xz-utils rsync nano vim sudo fontconfig msmtp
 
 # System and networking tools
-sudo apt install apt-utils diffstat chrpath socat locales debianutils findutils file time strace ltrace lsof iputils-ping net-tools traceroute iperf smbclient libssl-dev
+sudo apt install apt-utils diffstat chrpath socat locales debianutils findutils file time strace ltrace lsof iputils-ping net-tools traceroute iperf smbclient libssl-dev sysstat
 
 # Filesystem tooling
 sudo apt install exfat-fuse exfat-utils
