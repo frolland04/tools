@@ -1,23 +1,29 @@
-# Remove distribution-related packages if present
+#!/usr/bin/env bash
+
+# Remove distribution-related packages (if present) that would be harmful if kept installed.
 sudo apt remove docker docker-engine docker.io containerd runc
 
 # Update apt repositories
 sudo apt update
 
-# Required dependencies
+# Add required dependencies
 sudo apt install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg-agent
+
+# ID of current running OS, lowercase
+OS_ID=$(lsb_release -is)
+OS_ID=${OS_ID,,}
+OS_CN=$(lsb_release -cs)
 
 # Add the official docker repository
 sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+curl -fsSL https://download.docker.com/linux/${OS_ID}/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/${OS_ID} \
+  ${OS_CN} stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Refresh repositories
 sudo apt update
@@ -30,14 +36,3 @@ sudo groupadd docker
 
 # Add the group 'docker' to your user
 sudo usermod -aG docker ${USER}
-
-# Reload group 'docker'
-newgrp docker
-
-# Check that it works, whitout sudo !
-docker run hello-world
-
-# If it doesn't work, try
-sudo su - ${USER}
-
-# Log-out / log-in if it still doesn't work
