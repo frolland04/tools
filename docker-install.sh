@@ -8,7 +8,7 @@ sudo apt update
 
 # Add required dependencies
 sudo apt install -y \
-  lsb_release \
+  lsb-release \
   apt-transport-https \
   ca-certificates \
   curl \
