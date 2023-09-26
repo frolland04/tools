@@ -31,6 +31,7 @@ sudo apt install docker docker-compose
 
 # GIT tooling
 sudo apt install git git-lfs gitk git-gui git-cola
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # Various productivity tools
 sudo apt install gparted inkscape gimp krita digikam darktable gthumb shotwell gwenview thunar dia libreoffice
@@ -45,5 +46,5 @@ sudo apt install python3 python3-venv
 sudo apt install sqlite3 libsqlite3-dev rrdtool librrd-dev
 
 # Interesting Python packages to install in virtual env
-python3 -m pip install pip --upgrade
+python3 -m pip install --upgrade pip
 pip3 install setuptools black pylint mypy pywal bs4 serial mysql.connector --upgrade
