@@ -21,6 +21,7 @@ alias gcf='git config user.name "Frédéric ROLLAND" && git config user.email "f
 
 alias upd='sudo apt-get update && sudo apt-get upgrade && sudo apt clean'
 alias updd='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt clean'
+alias jp='sudo journalctl --vacuum-size 8M'
 
 export GIT_ROOT=/home/${USER}/git
 export GIT_FRD=${GIT_ROOT}/FRD
@@ -37,4 +38,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 fi
 
 export HTTP_PROXY="http://localhost:3142"
+alias acng='docker exec -it apt-cacher-ng tail -f /var/log/apt-cacher-ng/apt-cacher.log'
 
