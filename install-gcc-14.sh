@@ -2,6 +2,7 @@
 
 set -eu
 
+MAJOR_VER='14'
 VER='14.2.0'
 GCC_VER="gcc-${VER}"
 apt -y install build-essential libmpfr-dev libgmp3-dev libmpc-dev
@@ -28,5 +29,5 @@ make install
 
 set -x
 
-update-alternatives --install /usr/bin/g++-${VER} g++ ${PREFIX}/${GCC_VER}/bin/g++-${VER} 14
-update-alternatives --install /usr/bin/gcc-${VER} gcc ${PREFIX}/${GCC_VER}/bin/gcc-${VER} 14
+update-alternatives --install /usr/bin/g++-${MAJOR_VER} g++ ${PREFIX}/${GCC_VER}/bin/g++-${VER} 14
+update-alternatives --install /usr/bin/gcc-${MAJOR_VER} gcc ${PREFIX}/${GCC_VER}/bin/gcc-${VER} 14
