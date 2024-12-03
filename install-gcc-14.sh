@@ -5,7 +5,9 @@ set -eu
 VER='14.2.0'
 GCC_VER="gcc-${VER}"
 apt -y install build-essential libmpfr-dev libgmp3-dev libmpc-dev
-wget http://ftp.gnu.org/gnu/gcc/${GCC_VER}/${GCC_VER}.tar.gz
+if [ ! -f "${GCC_VER}.tar.gz" ] ; then
+    wget http://ftp.gnu.org/gnu/gcc/${GCC_VER}/${GCC_VER}.tar.gz
+fi
 tar -zxf ${GCC_VER}.tar.gz
 cd ${GCC_VER}
 
@@ -23,7 +25,8 @@ PREFIX='/usr/local'
 
 make -j 2
 make install
-update-alternatives --install /usr/bin/g++ g++ ${PREFIX}/${GCC_VER}/bin/g++-${VER} 14
-update-alternatives --install /usr/bin/cpp cpp ${PREFIX}/${GCC_VER}/bin/cpp-${VER} 14
-update-alternatives --install /usr/bin/c++ c++ ${PREFIX}/${GCC_VER}/bin/c++-${VER} 14
-update-alternatives --install /usr/bin/gcc gcc ${PREFIX}/${GCC_VER}/bin/gcc-${VER} 14
+
+set -x
+
+update-alternatives --install /usr/bin/g++-${VER} g++ ${PREFIX}/${GCC_VER}/bin/g++-${VER} 14
+update-alternatives --install /usr/bin/gcc-${VER} gcc ${PREFIX}/${GCC_VER}/bin/gcc-${VER} 14
