@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-CMAKE_DISTRIB_PREFIX="/usr"
-CMAKE_VERSION="3.27.3"
+CMAKE_DISTRIB_PREFIX="/usr/local"
+CMAKE_VERSION="3.31.1"
 CMAKE_ARCHIVE_NAME="cmake-${CMAKE_VERSION}.tar.gz"
 CMAKE_SOURCES="cmake-${CMAKE_VERSION}"
 
