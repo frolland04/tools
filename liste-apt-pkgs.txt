@@ -127,6 +127,7 @@ software-properties-common
 sqlite3
 sshfs
 sshpass
+ssh-tools
 strace
 sudo
 sysstat
