@@ -84,6 +84,7 @@ apt install \
     ltrace \
     lz4 \
     make \
+    mc \
     mdadm \
     mosquitto-clients \
     nano \
