@@ -63,6 +63,7 @@ kitty
 libarchive-tools
 libglib2.0-dev
 libi2c-dev
+libsqlite3-dev
 libssl-dev
 libssl-doc
 libtool
@@ -114,8 +115,10 @@ python3-gi
 python3-pip
 python3-setuptools
 python3-smbus
+python3-sql
 python3-virtualenv
 read-edid
+renameutils
 rsync
 samba-common-bin
 screen
@@ -125,9 +128,9 @@ smbclient
 socat
 software-properties-common
 sqlite3
+ssh-tools
 sshfs
 sshpass
-ssh-tools
 strace
 sudo
 sysstat

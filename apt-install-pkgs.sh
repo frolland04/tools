@@ -47,6 +47,7 @@ apt install \
     fontconfig \
     fzf \
     gawk \
+    gdb \
     gdisk \
     gettext \
     git \
@@ -66,6 +67,7 @@ apt install \
     libarchive-tools \
     libglib2.0-dev \
     libi2c-dev \
+    libsqlite3-dev \
     libssl-dev \
     libssl-doc \
     libtool \
@@ -85,6 +87,8 @@ apt install \
     mdadm \
     mosquitto-clients \
     nano \
+    neofetch \
+    neovim \
     net-tools \
     netcat-openbsd \
     nfs-common \
@@ -115,8 +119,10 @@ apt install \
     python3-pip \
     python3-setuptools \
     python3-smbus \
+    python3-sql \
     python3-virtualenv \
     read-edid \
+    renameutils \
     rsync \
     samba-common-bin \
     screen \
@@ -125,9 +131,10 @@ apt install \
     smbclient \
     socat \
     software-properties-common \
+    sqlite3 \
+    ssh-tools \
     sshfs \
     sshpass \
-    ssh-tools \
     strace \
     sudo \
     sysstat \
@@ -138,6 +145,7 @@ apt install \
     traceroute \
     tree \
     tzdata \
+    unrar \
     unrar-free \
     unzip \
     usbutils \
@@ -147,5 +155,6 @@ apt install \
     wget \
     xxd \
     xz-utils \
+    zerofree \
     zip \
     zstd
