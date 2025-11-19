@@ -3,7 +3,6 @@
 apt update && \
 apt install \
     '^libxcb.*' \
-    bustle \
     can-utils \
     clang-format \
     clang-tidy \
