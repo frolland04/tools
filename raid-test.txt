@@ -1,0 +1,58 @@
+#!/bin/bash
+
+set -aeu -o pipefail
+
+# SAS/SATA
+# ---------
+DRIVES=(
+/dev/sdk
+/dev/sdm
+)
+ACTIVE_DD=(${DRIVES[@]})
+SPARE_DD=()
+RAID_ARRAY="/dev/md/data"
+PART1_SUFFIX="1"
+
+ACTIVE_VOLUMES="${ACTIVE_DD[@]/%/${PART1_SUFFIX}}"
+SPARE_VOLUMES=${SPARE_DD[@]/%/${PART1_SUFFIX}}
+
+echo "RAID DRIVE ARRAY INSTALL FOR DATA STORAGE"
+echo "*****************************************"
+echo "Active volumes : ${ACTIVE_VOLUMES}"
+echo "Spare volumes  : ${SPARE_VOLUMES}"
+echo "Raid device    : ${RAID_ARRAY}"
+echo "*****************************************"
+echo ""
+echo "ARE YOU SURE TO PROCEED (Y/N) ?"
+read RESP
+if [ "${RESP}" != "y" ] && [ "${RESP}" != "Y" ]
+then
+    echo "ABORTED."
+    exit
+fi
+
+set -x
+
+# Create a single PART of type "Linux RAID member"
+# with a GPT table on each disk drive
+for DD in $(echo ${DRIVES[@]}) ; do
+    echo "-> ${DD}"
+    sgdisk -o -N1 -t1:fd00 ${DD}
+done
+
+# WARNING: Use linux-raid member *PART* names (p1 or 1)
+mdadm --create ${RAID_ARRAY} --level=0 --raid-devices=2 ${ACTIVE_VOLUMES}
+
+# Record the array in the config file
+mdadm --detail --scan ${RAID_ARRAY}  >> /etc/mdadm/mdadm.conf
+
+# Show result
+mdadm --detail ${RAID_ARRAY}
+
+# Create an ext4 filesystem
+mkfs.ext4 ${RAID_ARRAY}
+
+# Update the initramfs
+update-initramfs -u -k all
+
+set +x

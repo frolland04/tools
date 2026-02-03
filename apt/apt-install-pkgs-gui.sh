@@ -3,7 +3,10 @@
 apt update && \
 apt install \
     alsa-utils \
+    audacious \
     audacity \
+    bleachbit \
+    cheese \
     cool-retro-term \
     cpupower-gui \
     darktable \
@@ -14,6 +17,7 @@ apt install \
     gedit \
     gimp \
     gparted \
+    gprename \
     gthumb \
     gwenview \
     inkscape \
@@ -23,12 +27,14 @@ apt install \
     krename \
     krita \
     meld \
+    milkytracker \
     packagekit \
     pinta \
     pulseaudio \
     remmina \
     rhythmbox \
     shotwell \
+    simplescreenrecorder \
     terminator \
     terminology \
     thunar \

@@ -29,10 +29,10 @@ OS_DISTRIB_ID=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
 OS_CODENAME=$(lsb_release -cs)
 
 # Add the official docker repository
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/${OS_DISTRIB_ID}/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo mkdir -p /usr/share/keyrings
+curl -fsSL https://download.docker.com/linux/${OS_DISTRIB_ID}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/${OS_DISTRIB_ID} \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/${OS_DISTRIB_ID} \
   ${OS_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Refresh repositories

@@ -1,5 +1,8 @@
 alsa-utils
+audacious
 audacity
+bleachbit
+cheese
 cool-retro-term
 cpupower-gui
 darktable
@@ -10,6 +13,7 @@ freeplane
 gedit
 gimp
 gparted
+gprename
 gthumb
 gwenview
 inkscape
@@ -19,12 +23,14 @@ konsole
 krename
 krita
 meld
+milkytracker
 packagekit
 pinta
 pulseaudio
 remmina
 rhythmbox
 shotwell
+simplescreenrecorder
 terminator
 terminology
 thunar

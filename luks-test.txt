@@ -1,0 +1,31 @@
+# Examiner le disque concerné
+fdisk -l /dev/nvme0n1
+blkid /dev/nvme0n1*
+
+# Si besoin éliminer les anciennes signatures
+wipefs --all /dev/nvme0n1p3
+
+# Créer un espace crypté 'luks' sur la partition 3
+cryptsetup luksFormat /dev/nvme0n1p3
+
+# Ouvre puis prépare le contenu (ici un système de fichiers 'ext4')
+cryptsetup luksDump /dev/nvme0n1p3
+cryptsetup open /dev/nvme0n1p3 frederic
+mkfs.ext4 /dev/mapper/frederic 
+
+# Alternativement on pourrait le partitionner
+fdisk /dev/mapper/frederic
+
+# Installer pour le décryptage au boot (si besoin)
+cat /etc/crypttab
+echo "frederic /dev/nvme0n1p3 none luks" >> /etc/crypttab 
+cryptdisks_start frederic
+cryptdisks_stop frederic
+update-initramfs -u -k all
+reboot
+mount /dev/mapper/frederic /media/
+
+# Installer pour le montage au boot (si besoin)
+cat /etc/fstab 
+echo "/dev/mapper/frederic /home/frederic auto defaults 0 0" >> /etc/fstab
+
