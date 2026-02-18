@@ -128,6 +128,7 @@ apt install \
     samba-common-bin \
     screen \
     sed \
+    shellcheck \
     smartmontools \
     smbclient \
     socat \
@@ -142,6 +143,7 @@ apt install \
     sysvbanner \
     tar \
     time \
+    timeshift \
     tmux \
     traceroute \
     tree \

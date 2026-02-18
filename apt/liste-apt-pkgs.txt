@@ -124,6 +124,7 @@ rsync
 samba-common-bin
 screen
 sed
+shellcheck
 smartmontools
 smbclient
 socat
@@ -138,6 +139,7 @@ sysstat
 sysvbanner
 tar
 time
+timeshift
 tmux
 traceroute
 tree

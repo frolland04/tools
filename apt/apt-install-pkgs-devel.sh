@@ -3,10 +3,18 @@
 apt update && \
 apt install \
     '^libxcb.*' \
+    build-essential \
+    bustle \
     can-utils \
+    clang \
     clang-format \
+    clang-format-15 \
     clang-tidy \
+    clang-tidy-15 \
+    clangd \
     clazy \
+    cmake \
+    cmake-format \
     cppcheck \
     csstidy \
     d-feet \
@@ -23,6 +31,8 @@ apt install \
     hotspot \
     kcachegrind \
     kdevelop \
+    libclang-cpp-dev \
+    libclang-dev \
     libdbus-1-dev \
     libfontconfig1 \
     libfreetype6 \
@@ -52,6 +62,7 @@ apt install \
     nlohmann-json3-dev \
     qtcreator \
     rrdtool \
+    shellcheck \
     sox \
     tidy \
     valgrind \

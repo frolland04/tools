@@ -1,2 +1,5 @@
 obsidian
 pycharm-community
+pycharm
+clion
+shfmt
