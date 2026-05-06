@@ -1,0 +1,19 @@
+[Unit]
+Description=GitLab CE
+After=docker.service systemd-networkd.service systemd-resolved.service
+Requires=docker.service
+Documentation=https://docs.gitlab.com
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30
+Environment=GITLAB_CONFIG_DIR=/opt/gitlab/config
+Environment=GITLAB_LOGS_DIR=/opt/gitlab/logs
+Environment=GITLAB_DATA_DIR=/opt/gitlab/data
+Environment=GITLAB_BACKUP_DIR=/backups/%H/gitlab
+ExecStart=/usr/bin/docker compose -f /opt/gitlab/docker-compose.yml up
+ExecStop =/usr/bin/docker compose -f /opt/gitlab/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target
